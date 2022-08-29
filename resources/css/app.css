@@ -1,0 +1,17 @@
+.app-grid {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+}
+
+.avatar {
+    height: 200px;
+    width: 200px;
+}
+
+.avatar-mini {
+    height: 35px;
+    width: 35px;
+    border-radius: 20px;
+}
