@@ -13,7 +13,7 @@ class Register extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return false;
     }
 
     /**
