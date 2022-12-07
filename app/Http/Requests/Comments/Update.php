@@ -3,7 +3,6 @@
 namespace App\Http\Requests\Comments;
 
 use App\Models\Comment;
-use Carbon\Carbon;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Gate;
 

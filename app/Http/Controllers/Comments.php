@@ -9,6 +9,7 @@ use App\Http\Requests\Comments\Update as UpdateRequest;
 use App\Models\Post as MPost;
 use App\Models\Video as MVideo;
 use App\Models\Comment as MComment;
+use Illuminate\Support\Facades\Gate;
 
 class Comments extends Controller
 {
@@ -51,7 +52,13 @@ class Comments extends Controller
 
     public function destroy($id)
     {
-        MComment::findOrFail($id)->delete();
+        $comment =  MComment::findOrfail($id);
+
+        if (! Gate::allows('comment-update', $comment)) {
+            abort(403);
+        }
+        $comment->delete();
+
         return redirect()->back();
     }
 
